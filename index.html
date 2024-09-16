@@ -1,201 +1,221 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ادارة بيانات العملاء مكتبة ابو حنين </title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ادارة بيانات العملاء مكتبة ابو حنين</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 20px;
-            background-color: #f4f4f4;
-            transition: background-color 0.3s, color 0.3s;
-            text-align: right;
-        }
-        h2 {
-            color: #333;
-        }
-        .container {
-            max-width: 700px; 
-            margin: auto;
-            padding: 20px;
-            border: 1px solid #ccc;
-            background: white;
-            border-radius: 5px;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-        }
-        .transaction-container {
-            max-width: 70%; 
-            margin: auto; 
-            padding: 20px;
-            background: white;
-            border-radius: 5px;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-        }
-        .institution-info {
-            display: flex;
-            justify-content: space-between; 
-            align-items: center;
-            margin-bottom: 20px;
-        }
-        .institution-logo {
-            width: 100px; 
-            margin-left: 10px;
-        }
-        .customer-list, .customer-details, .add-customer {
-            margin-bottom: 20px;
-            padding: 15px;
-            border: 1px solid #ccc;
-            background: white;
-            border-radius: 5px;
-            transition: background 0.3s;
-        }
-        .customer {
-            cursor: pointer;
-            padding: 10px;
-            border-bottom: 1px solid #ddd;
-            margin-bottom: 5px;
-            background-color: #007bff; 
-            color: white; 
-            font-size: 22px; 
-            border-radius: 5px;
-        }
-        .button {
-            padding: 10px 15px;
-            margin: 5px;
-            background: #007bff;
-            color: white;
-            border: none;
-            cursor: pointer;
-            border-radius: 5px;
-        }
-        .button:hover {
-            background: #0056b3;
-        }
-        input {
-            padding: 10px;
-            margin: 5px;
-            width: calc(100% - 22px);
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            text-align: right;
-        }
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 10px;
-        }
-        th, td {
-            border: 1px solid #ddd;
-            padding: 8px;
-            text-align: right;
-        }
-        th {
-            background-color: #007bff;
-            color: white;
-        }
-        .print-button {
-            margin-top: 20px;
-            background: #28a745;
-        }
-        .search-bar {
-            margin-bottom: 20px;
-        }
-        .hidden {
-            display: none;
-        }
-        .add {
-            padding: 10px 15px;
-            margin: 5px;
-            background: green;
-            color: white;
-            border: none;
-            cursor: pointer;
-            border-radius: 5px;
-        }
-        .cancel {
-            padding: 10px 15px;
-            margin: 5px;
-            background: red;
-            color: white;
-            border: none;
-            cursor: pointer;
-            border-radius: 5px;
-        }
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 20px;
+        background-color: #f4f4f4;
+        transition: background-color 0.3s, color 0.3s;
+        text-align: right;
+      }
+      h2 {
+        color: #333;
+      }
+      .container {
+        max-width: 700px;
+        margin: auto;
+        padding: 20px;
+        border: 1px solid #ccc;
+        background: white;
+        border-radius: 5px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      }
+      .transaction-container {
+        max-width: 70%;
+        margin: auto;
+        padding: 20px;
+        background: white;
+        border-radius: 5px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      }
+      .institution-info {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 20px;
+      }
+      .institution-logo {
+        width: 100px;
+        margin-left: 10px;
+      }
+      .customer-list,
+      .customer-details,
+      .add-customer {
+        margin-bottom: 20px;
+        padding: 15px;
+        border: 1px solid #ccc;
+        background: white;
+        border-radius: 5px;
+        transition: background 0.3s;
+      }
+      .customer {
+        cursor: pointer;
+        padding: 10px;
+        border-bottom: 1px solid #ddd;
+        margin-bottom: 5px;
+        background-color: #007bff;
+        color: white;
+        font-size: 22px;
+        border-radius: 5px;
+      }
+      .button {
+        padding: 10px 15px;
+        margin: 5px;
+        background: #007bff;
+        color: white;
+        border: none;
+        cursor: pointer;
+        border-radius: 5px;
+      }
+      .button:hover {
+        background: #0056b3;
+      }
+      input {
+        padding: 10px;
+        margin: 5px;
+        width: calc(100% - 22px);
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        text-align: right;
+      }
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 10px;
+      }
+      th,
+      td {
+        border: 1px solid #ddd;
+        padding: 8px;
+        text-align: right;
+      }
+      .make-flex{
+        margin-top: 1rem;
+        display: flex;
+      }
+      th {
+        background-color: #007bff;
+        color: white;
+      }
+      .print-button {
+        margin-top: 20px;
+        background: #28a745;
+      }
+      .search-bar {
+        margin-bottom: 20px;
+      }
+      .hidden {
+        display: none;
+      }
+      .add {
+        padding: 10px 15px;
+        margin: 5px;
+        background: green;
+        color: white;
+        border: none;
+        cursor: pointer;
+        border-radius: 5px;
+      }
+      .cancel {
+        padding: 10px 15px;
+        margin: 5px;
+        background: red;
+        color: white;
+        border: none;
+        cursor: pointer;
+        border-radius: 5px;
+      }
     </style>
-</head>
-<body>
+  </head>
+  <body>
+    <div class="container">
+      <div class="institution-info">
+        <h2 class="h">مكتبة ابو حنين</h2>
+        <img src="logo-abohanen.jpg" alt="Logo" class="institution-logo" />
+      </div>
 
-<div class="container">
-    <div class="institution-info">
-        <h2 class="h">مكتبة ابو حنين</h2> 
-        <img src="logo-abohanen.jpg" alt="Logo" class="institution-logo">
-    </div>
-
-    <button class="button" onclick="toggleAddCustomer()">إضافة عميل جديد</button>
-    <div class="add-customer hidden" id="addCustomerSection">
+      <button class="button" onclick="toggleAddCustomer()">
+        إضافة عميل جديد
+      </button>
+      <div class="add-customer hidden" id="addCustomerSection">
         <h2>إضافة عميل جديد</h2>
-        <input type="text" id="customerName" placeholder="اسم العميل">
-        <input type="text" id="customerNumber" placeholder="رقم العميل">
-        <input type="text" id="customerAddress" placeholder="عنوان العميل">
+        <input type="text" id="customerName" placeholder="اسم العميل" />
+        <input type="text" id="customerNumber" placeholder="رقم العميل" />
+        <input type="text" id="customerAddress" placeholder="عنوان العميل" />
         <button class="add" onclick="addCustomer()">إضافة عميل</button>
         <button class="cancel" onclick="toggleAddCustomer()">إلغاء</button>
-    </div>
+      </div>
 
-    <div class="customer-list">
+      <div class="customer-list">
         <h2>قائمة العملاء</h2>
-        <input type="text" id="search" class="search-bar" placeholder="ابحث عن العملاء..." oninput="filterCustomers()">
+        <input
+          type="text"
+          id="search"
+          class="search-bar"
+          placeholder="ابحث عن العملاء..."
+          oninput="filterCustomers()"
+        />
         <div id="customers"></div>
+      </div>
     </div>
-</div>
 
-<script>
-    const customers = [];
+    <script>
+      const customers = [];
 
-    function toggleAddCustomer() {
-        const section = document.getElementById('addCustomerSection');
-        section.classList.toggle('hidden');
-    }
+      function toggleAddCustomer() {
+        const section = document.getElementById("addCustomerSection");
+        section.classList.toggle("hidden");
+      }
 
-    function loadCustomers() {
-        const customerDiv = document.getElementById('customers');
-        customerDiv.innerHTML = '';
+      function loadCustomers() {
+        const customerDiv = document.getElementById("customers");
+        customerDiv.innerHTML = "";
         customers.forEach((customer, index) => {
-            const div = document.createElement('div');
-            div.className = 'customer';
+          const div = document.createElement("div");
+          div.className = "customer";
+          div.innerText = customer.name; // Only show customer name
+          div.onclick = () => showCustomerDetails(index);
+          customerDiv.appendChild(div);
+        });
+      }
+
+      function filterCustomers() {
+        const query = document.getElementById("search").value.toLowerCase();
+        const customerDiv = document.getElementById("customers");
+        customerDiv.innerHTML = "";
+        customers.forEach((customer, index) => {
+          if (
+            customer.name.toLowerCase().includes(query) ||
+            customer.number.includes(query)
+          ) {
+            const div = document.createElement("div");
+            div.className = "customer";
             div.innerText = customer.name; // Only show customer name
             div.onclick = () => showCustomerDetails(index);
             customerDiv.appendChild(div);
+          }
         });
-    }
+      }
 
-    function filterCustomers() {
-        const query = document.getElementById('search').value.toLowerCase();
-        const customerDiv = document.getElementById('customers');
-        customerDiv.innerHTML = '';
-        customers.forEach((customer, index) => {
-            if (customer.name.toLowerCase().includes(query) || customer.number.includes(query)) {
-                const div = document.createElement('div');
-                div.className = 'customer';
-                div.innerText = customer.name; // Only show customer name
-                div.onclick = () => showCustomerDetails(index);
-                customerDiv.appendChild(div);
-            }
-        });
-    }
-
-    function showCustomerDetails(index) {
+      function showCustomerDetails(index) {
         const customer = customers[index];
-        const transactionRows = customer.transactions.map(t => 
-            `<tr>
+        const transactionRows = customer.transactions
+          .map(
+            (t) =>
+              `<tr>
                 <td>${t.type}</td>
                 <td>${t.amount}</td>
                 <td>${t.details}</td>
                 <td>${t.date}</td>
             </tr>`
-        ).join('');
-        
+          )
+          .join("");
+
         const detailsPage = `
             <div class="transaction-container"> 
                 <div class="institution-info">
@@ -206,6 +226,13 @@
                 <p>رقم: ${customer.number}</p>
                 <p>عنوان: ${customer.address}</p>
                 <p>الرصيد: ${customer.balance}</p>
+                
+                <!-- Add date filter inputs -->
+               <div  class="make-flex">
+                 <div> <label>تاريخ البداية: <input type="date" id="startDate" onchange="filterTransactions(${index})"></label> </div>
+       <div> <label>تاريخ النهاية: <input type="date" id="endDate" onchange="filterTransactions(${index})"></label> </div>
+                 </div>
+                
                 <h3>المعاملات</h3>
                 <table>
                     <thead>
@@ -216,8 +243,11 @@
                             <th>التاريخ والوقت</th>
                         </tr>
                     </thead>
-                    <tbody>
-                        ${transactionRows || '<tr><td colspan="4">لا توجد معاملات متاحة</td></tr>'}
+                    <tbody id="transactionTableBody">
+                        ${
+                          transactionRows ||
+                          '<tr><td colspan="4">لا توجد معاملات متاحة</td></tr>'
+                        }
                     </tbody>
                 </table>
                 <h3>إضافة معاملة</h3>
@@ -236,48 +266,73 @@
             </div>
         `;
         document.body.innerHTML = detailsPage;
-    }
+      }
 
-    function showTransactionInputs(index, type) {
+      function showTransactionInputs(index, type) {
         const inputsDiv = document.getElementById(`transactionInputs${index}`);
-        inputsDiv.style.display = 'block';
-        document.getElementById(`transactionAmount${index}`).value = '';
-        document.getElementById(`transactionDetails${index}`).value = '';
-        const addButton = inputsDiv.querySelector('button.add');
+        inputsDiv.style.display = "block";
+        document.getElementById(`transactionAmount${index}`).value = "";
+        document.getElementById(`transactionDetails${index}`).value = "";
+        const addButton = inputsDiv.querySelector("button.add");
         addButton.onclick = () => addTransaction(index, type);
-    }
+      }
 
-    function cancelTransaction(index) {
-        const inputsDiv = document.getElementById(`transactionInputs${index}`);
-        inputsDiv.style.display = 'none';
-    }
+      function filterTransactions(index) {
+        const startDate = document.getElementById("startDate").value;
+        const endDate = document.getElementById("endDate").value;
+        const customer = customers[index];
 
-    function goBack() {
-        document.body.innerHTML = originalBody;
-        loadCustomers();
-    }
+        let filteredTransactions = customer.transactions;
 
-    function addCustomer() {
-        const name = document.getElementById('customerName').value;
-        const number = document.getElementById('customerNumber').value;
-        const address = document.getElementById('customerAddress').value;
+        if (startDate) {
+          filteredTransactions = filteredTransactions.filter(
+            (t) => new Date(t.date) >= new Date(startDate)
+          );
+        }
+        if (endDate) {
+          filteredTransactions = filteredTransactions.filter(
+            (t) => new Date(t.date) <= new Date(endDate)
+          );
+        }
+
+        const transactionRows = filteredTransactions
+          .map(
+            (t) =>
+              `<tr>
+                <td>${t.type}</td>
+                <td>${t.amount}</td>
+                <td>${t.details}</td>
+                <td>${t.date}</td>
+            </tr>`
+          )
+          .join("");
+
+        document.getElementById("transactionTableBody").innerHTML =
+          transactionRows ||
+          '<tr><td colspan="4">لا توجد معاملات متاحة</td></tr>';
+      }
+
+      function addCustomer() {
+        const name = document.getElementById("customerName").value;
+        const number = document.getElementById("customerNumber").value;
+        const address = document.getElementById("customerAddress").value;
 
         customers.push({
-            name: name || "غير محدد",
-            number: number || "غير محدد",
-            address: address || "غير محدد",
-            balance: 0,
-            transactions: []
+          name: name || "غير محدد",
+          number: number || "غير محدد",
+          address: address || "غير محدد",
+          balance: 0,
+          transactions: [],
         });
 
-        document.getElementById('customerName').value = '';
-        document.getElementById('customerNumber').value = '';
-        document.getElementById('customerAddress').value = '';
+        document.getElementById("customerName").value = "";
+        document.getElementById("customerNumber").value = "";
+        document.getElementById("customerAddress").value = "";
         loadCustomers();
         toggleAddCustomer();
-    }
+      }
 
-    function editCustomer(index) {
+      function editCustomer(index) {
         const customer = customers[index];
         const editSection = `
             <div class="modify-customer-inputs">
@@ -289,86 +344,107 @@
                 <button class="cancel" onclick="stayOnTransaction()">إلغاء</button>
             </div>
         `;
-        document.body.insertAdjacentHTML('beforeend', editSection);
-    }
+        document.body.insertAdjacentHTML("beforeend", editSection);
+      }
 
-    function updateCustomer(index) {
-        const name = document.getElementById('editCustomerName').value;
-        const number = document.getElementById('editCustomerNumber').value;
-        const address = document.getElementById('editCustomerAddress').value;
+      function updateCustomer(index) {
+        const name = document.getElementById("editCustomerName").value;
+        const number = document.getElementById("editCustomerNumber").value;
+        const address = document.getElementById("editCustomerAddress").value;
 
         if (name || number || address) {
-            const customer = customers[index];
-            customer.name = name || customer.name;
-            customer.number = number || customer.number;
-            customer.address = address || customer.address;
-            showCustomerDetails(index);
+          const customer = customers[index];
+          customer.name = name || customer.name;
+          customer.number = number || customer.number;
+          customer.address = address || customer.address;
+          showCustomerDetails(index);
         } else {
-            alert("يرجى ملء الحقول.");
+          alert("يرجى ملء الحقول.");
         }
-    }
+      }
 
-    function stayOnTransaction() {
-        const editInputs = document.querySelector('.modify-customer-inputs');
+      function stayOnTransaction() {
+        const editInputs = document.querySelector(".modify-customer-inputs");
         if (editInputs) {
-            editInputs.remove();
+          editInputs.remove();
         }
-    }
+      }
 
-    function addTransaction(index, type) {
-        const amount = document.getElementById(`transactionAmount${index}`).value;
-        const details = document.getElementById(`transactionDetails${index}`).value;
+      function addTransaction(index, type) {
+        const amount = document.getElementById(
+          `transactionAmount${index}`
+        ).value;
+        const details = document.getElementById(
+          `transactionDetails${index}`
+        ).value;
 
         const customer = customers[index];
         const transactionAmount = amount ? parseFloat(amount) : 0;
 
         if (amount && isNaN(transactionAmount)) {
-            alert("يرجى إدخال مبلغ صحيح.");
-            return;
+          alert("يرجى إدخال مبلغ صحيح.");
+          return;
         }
 
-        if (type === 'استلام نقود') {
-            customer.balance += transactionAmount;
-        } else if (type === 'شراء بضاعة') {
-            customer.balance -= transactionAmount;
+        if (type === "استلام نقود") {
+          customer.balance += transactionAmount;
+        } else if (type === "شراء بضاعة") {
+          customer.balance -= transactionAmount;
         }
 
         const now = new Date();
         customer.transactions.push({
-            type: type,
-            amount: transactionAmount,
-            details: details || "لا توجد تفاصيل",
-            date: now.toLocaleString('ar-EG')
+          type: type,
+          amount: transactionAmount,
+          details: details || "لا توجد تفاصيل",
+          date: now.toLocaleString(),
         });
 
         showCustomerDetails(index);
-    }
+      }
 
-    function printTransactions(index) {
+      function printTransactions(index) {
         const customer = customers[index];
-        const printWindow = window.open('', '', 'height=400,width=600');
-        printWindow.document.write('<html lang="ar" dir="rtl"><head><title>المعاملات</title>');
-        printWindow.document.write('<style>');
-        printWindow.document.write('table { width: 100%; border-collapse: collapse; }');
-        printWindow.document.write('th, td { border: 1px solid #ddd; padding: 8px; text-align: right; }');
-        printWindow.document.write('th { background-color: #007bff; color: white; }');
-        printWindow.document.write('</style>');
-        printWindow.document.write('</head><body>');
-        printWindow.document.write('<div style="display: flex; justify-content: space-between; align-items: center;">');
-        printWindow.document.write('<h2>مكتبة ابو حنين</h2>'); 
-        printWindow.document.write('<img src="logo-abohanen.jpg" alt="Logo" style="width: 100px; margin-left: 10px;">');
-        printWindow.document.write('</div>');
+        const printWindow = window.open("", "", "height=400,width=600");
+        printWindow.document.write(
+          '<html lang="ar" dir="rtl"><head><title>المعاملات</title>'
+        );
+        printWindow.document.write("<style>");
+        printWindow.document.write(
+          "table { width: 100%; border-collapse: collapse; }"
+        );
+        printWindow.document.write(
+          "th, td { border: 1px solid #ddd; padding: 8px; text-align: right; }"
+        );
+        printWindow.document.write(
+          "th { background-color: #007bff; color: white; }"
+        );
+        printWindow.document.write("</style>");
+        printWindow.document.write("</head><body>");
+        printWindow.document.write(
+          '<div style="display: flex; justify-content: space-between; align-items: center;">'
+        );
+        printWindow.document.write("<h2>مكتبة ابو حنين</h2>");
+        printWindow.document.write(
+          '<img src="logo-abohanen.jpg" alt="Logo" style="width: 100px; margin-left: 10px;">'
+        );
+        printWindow.document.write("</div>");
         printWindow.document.write(`<h2>المعاملات لـ ${customer.name}</h2>`);
-        printWindow.document.write('<table border="1"><tr><th>نوع المعاملة</th><th>المبلغ</th><th>التفاصيل</th><th>التاريخ والوقت</th></tr>');
-        customer.transactions.forEach(t => printWindow.document.write(`<tr><td>${t.type}</td><td>${t.amount}</td><td>${t.details}</td><td>${t.date}</td></tr>`));
-        printWindow.document.write('</table>');
-        printWindow.document.write('</body></html>');
+        printWindow.document.write(
+          '<table border="1"><tr><th>نوع المعاملة</th><th>المبلغ</th><th>التفاصيل</th><th>التاريخ والوقت</th></tr>'
+        );
+        customer.transactions.forEach((t) =>
+          printWindow.document.write(
+            `<tr><td>${t.type}</td><td>${t.amount}</td><td>${t.details}</td><td>${t.date}</td></tr>`
+          )
+        );
+        printWindow.document.write("</table>");
+        printWindow.document.write("</body></html>");
         printWindow.document.close();
         printWindow.print();
-    }
+      }
 
-
-    function exportTransactions(index) {
+      function exportTransactions(index) {
         const customer = customers[index];
         let excelContent = `
             <html xmlns:x="urn:schemas-microsoft-com:office:excel">
@@ -380,9 +456,9 @@
                     <th>التفاصيل</th>
                     <th>التاريخ والوقت</th>
                 </tr>`;
-        
-        customer.transactions.forEach(t => {
-            excelContent += `
+
+        customer.transactions.forEach((t) => {
+          excelContent += `
                 <tr>
                     <td>${t.type}</td>
                     <td>${t.amount}</td>
@@ -392,19 +468,20 @@
         });
 
         excelContent += `</table></html>`;
-        
-        const blob = new Blob([excelContent], { type: 'application/vnd.ms-excel' });
+
+        const blob = new Blob([excelContent], {
+          type: "application/vnd.ms-excel",
+        });
         const link = document.createElement("a");
         link.href = URL.createObjectURL(blob);
         link.download = `${customer.name}_transactions.xls`;
         document.body.appendChild(link);
         link.click();
         document.body.removeChild(link);
-    }
+      }
 
-    const originalBody = document.body.innerHTML;
-    loadCustomers();
-</script>
-
-</body>
+      const originalBody = document.body.innerHTML;
+      loadCustomers();
+    </script>
+  </body>
 </html>
